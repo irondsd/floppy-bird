@@ -6,18 +6,25 @@ var birdImg;
 var pipe_headImg;
 var pipe_bodyImg;
 
+// TODO: add background
+// TODO: make bird fall upon death
+// TODO: redo pipes gap
+// TODO: add scores
+// TODO: maker restart without reloading the page
+// TODO: make pipes appear on the start of the game
+
 function setup() {
   if (this.lost) {
     return;
   }
-  createCanvas(1200, 600);
+  createCanvas(window.innerWidth, window.innerHeight);
   bird = new Bird();
   this.level = 1;
   this.lost = false;
 
   bird_img = loadImage('https://i.imgur.com/DXi2y95.png')
   pipe_headImg = loadImage('https://i.imgur.com/BjvxJCE.png')
-  pipe_bodyImg = loadImage('https://i.imgur.com/8wE6HFy.png')
+  pipe_bodyImg = loadImage('https://i.imgur.com/bnHlNU0.png')
 }
 
 function draw() {

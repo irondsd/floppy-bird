@@ -5,15 +5,21 @@ function Pipe(speed = 3, substractGap = 0) {
     this.top = random(5, height - this.gap);
     this.bottom = height - (this.top + this.gap);
     this.x = width;
-    this.w = 30
+    this.w = 26
     this.speed = speed;
 
     this.show = function (pipe_headImg, pipe_bodyImg) {
         fill(34, 139, 34);
         rect(this.x, 0, this.w, this.top);
         rect(this.x, height - this.bottom, this.w, this.bottom);
-        image(pipe_headImg, this.x - 2, this.top - 15)
-        image(pipe_headImg, this.x - 2, height - this.bottom)
+        for (let i = 0; i < this.top - 15; i = i + 10) {
+            image(pipe_bodyImg, this.x, i)
+        }
+        for (let i = height - this.bottom; i < height; i = i + 10) {
+            image(pipe_bodyImg, this.x, i)
+        }
+        image(pipe_headImg, this.x - 4, height - this.bottom)
+        image(pipe_headImg, this.x - 4, this.top - 15)
     }
 
     this.update = function () {
